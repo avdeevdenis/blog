@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect } from 'react';
-import smoothscroll from 'smoothscroll-polyfill';
+import React from 'react';
 
 import {
     cnApp,
@@ -11,10 +10,11 @@ import {
     IPageTemplateProps,
 } from './typings';
 
-import { Header } from '..';
+import { Header, Footer } from '..';
 
 import './index.scss'
-import { withCalculateScreenSize } from '../hooks/with-calculate-screen-size';
+import { withCalculateScreenSize } from '../../hooks/with-calculate-screen-size';
+import { withSmoothScroll } from '../../hooks/with-smooth-scroll';
 
 const FAVICON_DEFAULT = './favicon.ico';
 
@@ -37,17 +37,11 @@ const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
             <div className={cnAppPage}>
                 {props.children}
             </div>
+
+            <Footer />
         </div>
     )
 });
-
-const withSmoothScroll = (Component: React.FC) => (props: any) => {
-    useEffect(() => {
-        smoothscroll.polyfill();
-    }, []);
-
-    return <Component {...props} />
-}
 
 const PageTemplate = withSmoothScroll(withCalculateScreenSize(PageTemplateBase));
 
