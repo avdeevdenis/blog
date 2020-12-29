@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import {
     cnApp,
@@ -40,7 +41,14 @@ const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
     )
 });
 
+const withSmoothScroll = (Component: React.FC) => (props: any) => {
+    useEffect(() => {
+        smoothscroll.polyfill();
+    }, []);
 
-const PageTemplate = withCalculateScreenSize(PageTemplateBase);
+    return <Component {...props} />
+}
+
+const PageTemplate = withSmoothScroll(withCalculateScreenSize(PageTemplateBase));
 
 export default PageTemplate;
