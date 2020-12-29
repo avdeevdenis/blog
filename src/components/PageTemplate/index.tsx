@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import {
     cnApp,
@@ -13,22 +13,13 @@ import {
 import { Header } from '..';
 
 import './index.scss'
+import { withCalculateScreenSize } from '../hooks/with-calculate-screen-size';
 
 const FAVICON_DEFAULT = './favicon.ico';
 
-const PageTemplate: React.FC<IPageTemplateProps> = React.memo(props => {
+const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
     const { faviconPath } = props;
     const favicon = faviconPath || FAVICON_DEFAULT;
-
-    useEffect(() => {
-        // Сначала получаем высоту окна просмотра 
-        // и умножаем ее на 1%
-        let vh = window.innerHeight * 0.01;
-
-        // Затем устанавливаем значение свойства --vh
-        // для корневого элемента
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }, []);
 
     return (
         <div className={cnApp()}>
@@ -48,5 +39,8 @@ const PageTemplate: React.FC<IPageTemplateProps> = React.memo(props => {
         </div>
     )
 });
+
+
+const PageTemplate = withCalculateScreenSize(PageTemplateBase);
 
 export default PageTemplate;

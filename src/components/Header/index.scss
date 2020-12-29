@@ -5,18 +5,23 @@
     justify-content: space-between;
     align-items: center;
 
-    background: #111; // TODO change
     position: relative;
 
     z-index: 1;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     padding: 0 16px;
 
     font-weight: 400;
 
     height: $header-height;
+
+    max-width: $max-page-width;
+    margin: 0 auto;
+
+    &-Wrapper {
+        background: #111; // TODO change
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
     &-Menu {
         padding-left: 0;

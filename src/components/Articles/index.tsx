@@ -52,10 +52,12 @@ export const Article: React.FC<IArticleProps> = ({
 
 const Articles: React.FC = React.memo(() => {
     return (
-        <div className='AricleList'>
-            {articlesData.map((articleData) => {
-                return <Article key={articleData.title} {...articleData} />
-            })}
+        <div className='AricleList-Wrapper'>
+            <div className='AricleList'>
+                {articlesData.map((articleData) => {
+                    return <Article key={articleData.title} {...articleData} />
+                })}
+            </div>
         </div>
     );
 });

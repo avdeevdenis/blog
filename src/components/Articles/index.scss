@@ -1,8 +1,6 @@
 @import "../../assets/scss/variables.scss";
 
 .AricleList {
-    background-color: #2c2d2c;
-
     padding: 30px 20px;
 
     // display: flex;
@@ -12,6 +10,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     grid-gap: 1.4rem;
+
+    max-width: $max-page-width;
+
+    margin: 0 auto;
+
+    &-Wrapper {
+        background-color: #2c2d2c;
+    }
 }
 
 .Article {
