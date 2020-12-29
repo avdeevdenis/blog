@@ -1,0 +1,24 @@
+$rotate-degree: 45deg;
+$transition-duration: 0.25s;
+
+.BurgerIcon {
+    .BurgerIcon-Top,
+    .BurgerIcon-Bottom,
+    .BurgerIcon-Middle {
+        transition: $transition-duration transform ease-in-out, $transition-duration opacity ease-in-out;
+    }
+}
+
+.BurgerIcon_active {
+    .BurgerIcon-Top {
+        transform: translate3d(6px, -2px, 0) rotate($rotate-degree);
+    }
+
+    .BurgerIcon-Middle {
+        opacity: 0;
+    }
+
+    .BurgerIcon-Bottom {
+        transform: translate3d(-13.5px, 8.5px, 0) rotate(0 - $rotate-degree);
+    }
+}

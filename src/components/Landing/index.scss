@@ -1,0 +1,59 @@
+@import "../../assets/scss/variables.scss";
+
+.Landing {
+    // background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+    // background-color: #eee;
+    background: linear-gradient(0deg, #2c2d2c, #111);
+
+    height: calc(100vh - #{$header-height});
+    height: calc(var(--vh, 1vh) * 100 - #{$header-height});
+    // min-height: 800px;
+
+    position: relative;
+
+    &-Scroll {
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: translate(0, 0);
+
+        text-align: center;
+
+        bottom: 0;
+        padding-top: 10px;
+
+        padding-bottom: 40px;
+
+        cursor: pointer;
+
+        animation: move-bottom 2s 2s ease infinite;
+
+        color: #fff;
+
+        &::after {
+            content: "\2193";
+            display: block;
+            line-height: 0.5;
+
+            font-size: 28px;
+
+            margin-top: 8px;
+
+            text-align: center;
+        }
+    }
+
+    @keyframes move-bottom {
+        from {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(0, 20px);
+        }
+
+        to {
+            transform: translate(0, 0);
+        }
+    }
+}
