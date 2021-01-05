@@ -152,6 +152,19 @@
             border-color: #fff;
         }
     }
+
+    &-Avatar {
+        background-image: url('../../assets/images/avatar.jpg');
+        background-size: cover;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+
+        opacity: .8;
+        box-shadow: inset 0 0 .5px .1px #ccc;
+
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: $breakpoint-large) {

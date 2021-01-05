@@ -14,6 +14,7 @@ export const cnHeaderMenuButton = cnHeader('MenuButton');
 export const cnHeaderLogo = cnHeader('Logo');
 export const cnHeaderSocial = cnHeader('Social');
 export const cnHeaderBurger = cnHeader('Burger');
+export const cnHeaderAvatar = cnHeader('Avatar');
 
 const Header: React.FC = React.memo(() => {
     return (
@@ -38,14 +39,17 @@ const Header: React.FC = React.memo(() => {
                 </ul>
                 <div className={cnHeaderLogo}><a href='/'>Logo</a></div>
                 <ul className={cnHeaderMenu}>
-                    <li className={cnHeaderMenuItem}><a className={cnHeaderMenuLink} href="#">Fb</a></li>
+                    <li className={cnHeaderMenuItem}>
+                        <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в телеграме" href="//t.me/avdeev_den">Tg</a>
+                    </li>
                     <li className={cnHeaderMenuItem}>
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль Вконтакте" href="//vk.com/booomka">Vk</a>
                     </li>
                     <li className={cnHeaderMenuItem}>
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в GitHub" href="//github.com/avdeevdenis">Gh</a>
                     </li>
-                    <div className={cnHeaderMenuButton}>Press</div>
+                    {/* <div className={cnHeaderMenuButton}>Press</div> */}
+                    <div className={cnHeaderAvatar} />
                 </ul>
             </div>
         </div>
