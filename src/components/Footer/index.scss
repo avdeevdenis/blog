@@ -1,9 +1,9 @@
 @import "../../assets/scss/variables.scss";
 
 .Footer {
-    height: 70px;
+    height: $footer-height;
 
-    line-height: 40px;
+    line-height: $footer-height;
 
     color: rgba(255, 255, 255, .7);
     font-size: 13px;

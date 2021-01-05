@@ -1,0 +1,22 @@
+@import "../../assets/scss/variables.scss";
+
+.IframePager {
+    height: calc(100vh - #{$footer-height} - #{$header-height});
+    display: block;
+    border: none;
+    width: 100%;
+
+    &-Loader {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%);
+    }
+
+    &_hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}

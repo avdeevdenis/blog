@@ -1,5 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
+import isMobile from '../helpers/is-mobile';
+
 export const withCalculateScreenSize = (Component: React.FC) => (props: any) => {
     const setCorrectVh = useCallback(() => {
         // Сначала получаем высоту окна просмотра
@@ -14,10 +16,12 @@ export const withCalculateScreenSize = (Component: React.FC) => (props: any) => 
     useEffect(() => {
         setCorrectVh();
 
-        window.addEventListener('resize', setCorrectVh);
+        !isMobile && window.addEventListener('resize', setCorrectVh);
+        isMobile && window.addEventListener('orientationchange', setCorrectVh);
 
         return () => {
-            window.removeEventListener('resize', setCorrectVh);
+            !isMobile && window.removeEventListener('resize', setCorrectVh);
+            isMobile && window.removeEventListener('orientationchange', setCorrectVh);
         };
     }, []);
 

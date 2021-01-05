@@ -15,8 +15,6 @@ const Footer = React.memo(() => {
         }, 1000);
     }, [animated]);
 
-    console.log(animated);
-
     return (
         <div className='Footer-Wrapper'>
             <div className='Footer'>

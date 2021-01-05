@@ -1,3 +1,5 @@
+@import "../../assets/scss/variables.scss";
+
 body {
     margin: 0;
     scroll-behavior: smooth;
@@ -6,4 +8,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+.App-Page {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+
+    background-color: #eee;
 }
