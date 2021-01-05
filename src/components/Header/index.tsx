@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@bem-react/classname';
+import Link from 'next/link';
 
 import BurgerIcon from '../BurgerIcon';
 
@@ -37,7 +38,7 @@ const Header: React.FC = React.memo(() => {
                         <a className={cnHeaderMenuLink} href="#">Jobs</a>
                     </li>
                 </ul>
-                <div className={cnHeaderLogo}><a href='/'>Logo</a></div>
+                <div className={cnHeaderLogo}><Link href='/'>Logo</Link></div>
                 <ul className={cnHeaderMenu}>
                     <li className={cnHeaderMenuItem}>
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в телеграме" href="//t.me/avdeev_den">Tg</a>
@@ -49,7 +50,7 @@ const Header: React.FC = React.memo(() => {
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в GitHub" href="//github.com/avdeevdenis">Gh</a>
                     </li>
                     {/* <div className={cnHeaderMenuButton}>Press</div> */}
-                    <div className={cnHeaderAvatar} />
+                    <Link href='/'><a  className={cnHeaderAvatar}></a></Link>
                 </ul>
             </div>
         </div>

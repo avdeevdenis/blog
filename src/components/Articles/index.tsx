@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import Link from 'next/link';
 
 import './index.scss';
 
@@ -36,17 +37,19 @@ export const Article: React.FC<IArticleProps> = ({
     return (
         <div className={cnArticle()}>
             {/* <div className={cnArticleContent}> */}
-                <div className={cnArticleTitle}>
-                    <b>{titleWrapped.slice(0, 1)}</b>{titleWrapped.slice(1)}
-                </div>
-                <div className={cnArticleDescription}>{description}</div>
-                <div className={cnArticleBottom}>
+            <div className={cnArticleTitle}>
+                <b>{titleWrapped.slice(0, 1)}</b>{titleWrapped.slice(1)}
+            </div>
+            <div className={cnArticleDescription}>{description}</div>
+            <div className={cnArticleBottom}>
+                <Link href={link}>
                     <a href={link} title='Открыть в новой вкладке' className={cnArticleReadButton}>
                         <div style={faviconStyle} className={cnArticleFavicon} />
                     Read More
                 </a>
-                    <div className={cnArticleCreatedAt}>{createdAt}</div>
-                </div>
+                </Link>
+                <div className={cnArticleCreatedAt}>{createdAt}</div>
+            </div>
             {/* </div> */}
             {/* <div className='Article-Backdrop'></div> */}
         </div>
