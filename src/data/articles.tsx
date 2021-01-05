@@ -21,7 +21,7 @@ export const articlesData: IArticleProps[] = [{
 }, {
     title: 'Circles Animation',
     description: 'Анимация маленьких кружочков вариативного количества и размера из которых выстраиваются простые геометрические фигуры.',
-    link: STATIC_PAGES + 'circles-animation',
+    link: '//avdeevdenis.github.io/circles-animation',
     faviconLink: createFaviconLink('//avdeevdenis.github.io/circles-animation'),
     createdAt: 'todo',
 }, {

@@ -9,14 +9,15 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    grid-gap: 1.4rem;
+    grid-gap: 1.5rem;
 
     max-width: $max-page-width;
 
     margin: 0 auto;
 
     &-Wrapper {
-        background-color: #2c2d2c;
+        // background-color: #2c2d2c;
+        background: linear-gradient(0deg, #2c2d2c, rgb(8, 8, 13));
     }
 }
 
@@ -144,7 +145,7 @@
         width: 24px;
         height: 24px;
 
-        background-image: url('//nextjs-blog.avdeevdenis.vercel.app/favicon.ico');
+        background-image: url("//nextjs-blog.avdeevdenis.vercel.app/favicon.ico");
         background-size: cover;
         background-position: center center;
     }

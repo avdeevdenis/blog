@@ -13,7 +13,7 @@ const cnArticleBottom = cnArticle('Bottom');
 const cnArticleReadButton = cnArticle('ReadButton');
 const cnArticleCreatedAt = cnArticle('CreatedAt');
 const cnArticleFavicon = cnArticle('Favicon');
-
+// const cnArticleContent = cnArticle('Content');
 export interface IArticleProps {
     // Заголовок статьи
     title: string;
@@ -35,17 +35,20 @@ export const Article: React.FC<IArticleProps> = ({
 
     return (
         <div className={cnArticle()}>
-            <div className={cnArticleTitle}>
-                <b>{titleWrapped.slice(0, 1)}</b>{titleWrapped.slice(1)}
-            </div>
-            <div className={cnArticleDescription}>{description}</div>
-            <div className={cnArticleBottom}>
-                <a href={link} title='Открыть в новой вкладке' className={cnArticleReadButton}>
-                    <div style={faviconStyle} className={cnArticleFavicon} />
+            {/* <div className={cnArticleContent}> */}
+                <div className={cnArticleTitle}>
+                    <b>{titleWrapped.slice(0, 1)}</b>{titleWrapped.slice(1)}
+                </div>
+                <div className={cnArticleDescription}>{description}</div>
+                <div className={cnArticleBottom}>
+                    <a href={link} title='Открыть в новой вкладке' className={cnArticleReadButton}>
+                        <div style={faviconStyle} className={cnArticleFavicon} />
                     Read More
                 </a>
-                <div className={cnArticleCreatedAt}>{createdAt}</div>
-            </div>
+                    <div className={cnArticleCreatedAt}>{createdAt}</div>
+                </div>
+            {/* </div> */}
+            {/* <div className='Article-Backdrop'></div> */}
         </div>
     )
 }

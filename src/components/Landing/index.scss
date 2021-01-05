@@ -5,6 +5,21 @@
     // background-color: #eee;
     background: linear-gradient(0deg, #2c2d2c, #111);
 
+    background-image: url("../../assets/images/castle-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+    }
+
     height: calc(100vh - #{$header-height});
     height: calc(var(--vh, 1vh) * 100 - #{$header-height});
     // min-height: 800px;
@@ -29,6 +44,8 @@
         animation: move-bottom 2s 2s ease infinite;
 
         color: #fff;
+
+        z-index: 1;
 
         &::after {
             content: "\2193";

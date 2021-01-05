@@ -1,9 +1,10 @@
+// import React, { useCallback } from 'react';
 import React from 'react';
 
 import PageTemplate from '../../../src/components/PageTemplate';
 import { moduleLoader } from '../../../src/utils/module-loader';
 
-import '../../../src/pages/lego-blocks/assets/index.scss';
+import './assets/index.scss';
 
 import Blue1 from './assets/images/blue1.svg';
 import Blue2 from './assets/images/blue2.svg';
