@@ -5,11 +5,9 @@ import { Landing, Articles } from '../src/components';
 
 export default function Home() {
   return (
-    <div className="App">
-      <PageTemplate>
-        <Landing />
-        <Articles />
-      </PageTemplate>
-    </div>
+    <PageTemplate>
+      <Landing />
+      <Articles />
+    </PageTemplate>
   )
 }

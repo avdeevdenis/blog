@@ -5,8 +5,8 @@ import { IframePager } from '../../components';
 
 const Page: React.FC = React.memo(() => {
     return (
-        <PageTemplate faviconPath={'//avdeevdenis.github.io/lego-blocks/favicon.ico'}>
-            <IframePager src={'//avdeevdenis.github.io/lego-blocks/'} />
+        <PageTemplate>
+            <IframePager src={'//avdeevdenis.github.io/waxon/'} />
         </PageTemplate>
     );
 });

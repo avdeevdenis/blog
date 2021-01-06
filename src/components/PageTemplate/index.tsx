@@ -25,7 +25,7 @@ const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
     return (
         <div className={cnApp()}>
             <Head>
-                <title>Homepage | Avdeev Denis</title>
+                <title>Home &#10026; Avdeev Denis</title>
                 <link rel="shortcut icon" href={favicon} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />

@@ -1,4 +1,7 @@
 export interface IPageTemplateProps {
-    // Относительный путь к favicon страницы
+    // Путь к favicon страницы
     faviconPath?: string;
+
+    // Заголовок страницы
+    title?: string;
 }

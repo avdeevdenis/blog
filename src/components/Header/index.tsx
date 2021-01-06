@@ -17,6 +17,8 @@ export const cnHeaderSocial = cnHeader('Social');
 export const cnHeaderBurger = cnHeader('Burger');
 export const cnHeaderAvatar = cnHeader('Avatar');
 
+const HOMEPAGE = '/?autoscroll';
+
 const Header: React.FC = React.memo(() => {
     return (
         <div className={cnHeaderWrapper}>
@@ -38,7 +40,7 @@ const Header: React.FC = React.memo(() => {
                         <a className={cnHeaderMenuLink} href="#">Jobs</a>
                     </li>
                 </ul>
-                <div className={cnHeaderLogo}><Link href='/'>Logo</Link></div>
+                <div className={cnHeaderLogo}><Link href={HOMEPAGE}>Logo</Link></div>
                 <ul className={cnHeaderMenu}>
                     <li className={cnHeaderMenuItem}>
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в телеграме" href="//t.me/avdeev_den">Tg</a>
@@ -49,8 +51,7 @@ const Header: React.FC = React.memo(() => {
                     <li className={cnHeaderMenuItem}>
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в GitHub" href="//github.com/avdeevdenis">Gh</a>
                     </li>
-                    {/* <div className={cnHeaderMenuButton}>Press</div> */}
-                    <Link href='/'><a  className={cnHeaderAvatar}></a></Link>
+                    <Link href={HOMEPAGE}><a  className={cnHeaderAvatar}></a></Link>
                 </ul>
             </div>
         </div>

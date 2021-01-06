@@ -1,7 +1,9 @@
 @import "../../assets/scss/variables.scss";
 
 .IframePager {
-    height: calc(100vh - #{$footer-height} - #{$header-height});
+    min-height: calc(100vh - #{$footer-height} - #{$header-height});
+    min-height: calc(var(--vh, 1vh) * 100 - #{$footer-height} - #{$header-height});
+
     display: block;
     border: none;
     width: 100%;

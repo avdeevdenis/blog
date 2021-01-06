@@ -7,6 +7,18 @@ const createFaviconLink = (siteUrl: string) => {
 const STATIC_PAGES = '/pages/';
 
 export const articlesData: IArticleProps[] = [{
+    title: 'Waxon',
+    description: 'Pixel perfect верстка по готовому макету.',
+    link: STATIC_PAGES + 'waxon',
+    // faviconLink: createFaviconLink('//avdeevdenis.github.io/waxon'),
+    createdAt: '24 Oct 2018'
+}, {
+    title: 'Circles Animation',
+    description: 'Анимация маленьких кружочков вариативного количества и размера из которых выстраиваются простые геометрические фигуры.',
+    link: STATIC_PAGES + 'circles-animation/',
+    faviconLink: createFaviconLink('//avdeevdenis.github.io/circles-animation'),
+    createdAt: '28 Sep 2019',
+}, {
     title: 'Falling Lego Blocks',
     description: 'Анимация соединения деталей лего при скролле страницы с помощью CSS и JS.',
     createdAt: '18 Oct 2019',
@@ -19,51 +31,15 @@ export const articlesData: IArticleProps[] = [{
     createdAt: '20 Oct 2019',
     faviconLink: createFaviconLink('//avdeevdenis.github.io/web-wiki-parser')
 }, {
-    title: 'Circles Animation',
-    description: 'Анимация маленьких кружочков вариативного количества и размера из которых выстраиваются простые геометрические фигуры.',
-    link: '//avdeevdenis.github.io/circles-animation',
-    faviconLink: createFaviconLink('//avdeevdenis.github.io/circles-animation'),
-    createdAt: 'todo',
-}, {
     title: 'SberLenta Parser',
     description: 'Парсер ассортимента магазина Лента (sbermarket.ru/lenta) с промежуточным сохранением результатов в БД.',
     link: STATIC_PAGES + 'sberlenta-parser',
-    // faviconLink: createFaviconLink('//avdeevdenis.github.io/sberlenta-parser'),
-    createdAt: 'todo',
+    faviconLink: createFaviconLink('//avdeevdenis.github.io/tools-parser-api'),
+    createdAt: '14 Aug 2020',
 }, {
     title: 'Frontend Drug Parser',
-    description: 'TODO',
+    description: 'Парсер предельных цен на лекарства по названию лекарства.',
     link: STATIC_PAGES + 'frontend-drug-parser',
     faviconLink: createFaviconLink('//avdeevdenis.github.io/frontend-drug-parser'),
-    createdAt: 'todo'
-}, {
-    title: 'Vk Parser',
-    description: 'TODO',
-    link: STATIC_PAGES + 'vk-parser',
-    faviconLink: createFaviconLink('//avdeevdenis.github.io/vk-parser'),
-    createdAt: 'todo'
-}, {
-    title: 'Waxon',
-    description: 'TODO',
-    link: STATIC_PAGES + 'waxon',
-    faviconLink: createFaviconLink('//avdeevdenis.github.io/waxon'),
-    createdAt: 'todo'
-}, {
-    title: 'React VK',
-    description: 'TODO',
-    link: STATIC_PAGES + 'react-vk',
-    faviconLink: createFaviconLink('//avdeevdenis.github.io/react-vk'),
-    createdAt: 'todo'
-}, {
-    title: 'Header Line',
-    description: 'TODO',
-    link: STATIC_PAGES + 'header-line',
-    faviconLink: createFaviconLink('//avdeevdenis.github.io/header-line'),
-    createdAt: 'todo'
-}, {
-    title: 'Progress Circle Loader',
-    description: 'TODO',
-    link: STATIC_PAGES + 'progress',
-    faviconLink: createFaviconLink('//avdeevdenis.github.io/progress'),
-    createdAt: 'todo'
+    createdAt: '10 Sep 2020'
 }];
