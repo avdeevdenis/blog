@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
 const backgroundItemsCount = 3;
-const BG_TOGGLE_TIMEOUT = 5000;
+const BG_TOGGLE_TIMEOUT = 6000;
 
 let timer: NodeJS.Timer | null = null;
+
+import './with-parallax-bg-images.scss';
 
 export const withParallaxBgImages = (Component: React.FC) => (props: any) => {
     const [backgroundValue, setBackground] = useState(1);
@@ -16,9 +18,12 @@ export const withParallaxBgImages = (Component: React.FC) => (props: any) => {
         ];
 
         images.forEach(src => {
-            const image = new Image();
-            image.src = src;
-        })
+            const imageElement = document.createElement('img');
+            imageElement.src = src;
+            imageElement.classList.add('ImagePreloaderHidden');
+
+            document.body.append(imageElement);
+        });
     }, []);
 
     // Timeouted changing background images

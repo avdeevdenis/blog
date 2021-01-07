@@ -51,7 +51,7 @@ const Header: React.FC = React.memo(() => {
                     <li className={cnHeaderMenuItem}>
                         <a className={cnHeaderMenuLink} target="_blank" title="Открыть профиль в GitHub" href="//github.com/avdeevdenis">Gh</a>
                     </li>
-                    <Link href={HOMEPAGE}><a  className={cnHeaderAvatar}></a></Link>
+                    <div className={cnHeaderAvatar}></div>
                 </ul>
             </div>
         </div>

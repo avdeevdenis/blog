@@ -16,7 +16,7 @@ export interface IIframeProps {
 const DELAYED_LOAD = 300;
 
 // Если iframe не загрузился через ERROR_TIMEOUT - показываем ошибку
-const ERROR_TIMEOUT = 2000;
+const ERROR_TIMEOUT = 10000;
 
 let errorTimer: NodeJS.Timer | null = null;
 
