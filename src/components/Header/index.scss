@@ -19,7 +19,7 @@
     margin: 0 auto;
 
     &-Wrapper {
-        background: #111; // TODO change
+        background: #111;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
@@ -28,6 +28,8 @@
 
         display: flex;
         align-items: center;
+
+        list-style: none;
     }
 
     &-MenuItem {
