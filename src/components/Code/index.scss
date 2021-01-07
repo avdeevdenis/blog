@@ -1,0 +1,41 @@
+.Code {
+    &:hover {
+        cursor: pointer;
+
+        .Code-Copy::before {
+            display: block;
+        }
+    }
+
+    &-Copy {
+        position: relative;
+        margin-top: 26px;
+
+        color: #333;
+
+        &::before {
+            content: "Скопировать";
+            position: absolute;
+
+            display: none;
+
+            top: -20px;
+            height: 20px;
+            line-height: 20px;
+
+            font-size: 11px;
+
+            background-color: #fff;
+
+            padding: 0 10px;
+            box-sizing: border-box;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        &_copied::before {
+            background-color: #bcf5bc;
+            content: "Скопировано";
+        }
+    }
+}

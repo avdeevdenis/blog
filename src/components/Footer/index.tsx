@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { AppWrapper } from '..';
 
 import './index.scss';
 
@@ -17,10 +18,12 @@ const Footer = React.memo(() => {
 
     return (
         <div className='Footer-Wrapper'>
-            <div className='Footer'>
-                <div className={'Footer-Copy' + (animated ? ' Footer-Copy_animated' : '')} onClick={onFooterCopyClick}>Avdeev Denis 2020 &copy;</div>
-            </div>
-        </div>
+            <AppWrapper>
+                <div className='Footer'>
+                    <div className={'Footer-Copy' + (animated ? ' Footer-Copy_animated' : '')} onClick={onFooterCopyClick}>Avdeev Denis 2020 &copy;</div>
+                </div>
+            </AppWrapper>
+        </div >
     );
 });
 

@@ -7,6 +7,10 @@ const createFaviconLink = (siteUrl: string) => {
 const STATIC_PAGES = '/pages/';
 
 export const articlesData: IArticleProps[] = [{
+    title: 'JS helpers',
+    description: 'Вспомогательные приемы в JS.',
+    link: STATIC_PAGES + 'js-helpers'
+}, {
     title: 'Frontend Drug Parser',
     description: 'Парсер предельных цен на лекарства по названию лекарства.',
     link: STATIC_PAGES + 'frontend-drug-parser',

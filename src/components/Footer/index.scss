@@ -8,14 +8,9 @@
     text-align: right;
 
     position: relative;
-    padding-right: 20px;
 
     letter-spacing: 0.4px;
     text-shadow: 0.3px 0.3px 0.1px #333;
-
-    max-width: $max-page-width;
-
-    margin: 0 auto;
 
     &-Wrapper {
         background: linear-gradient(0deg, #111, #2c2d2c);

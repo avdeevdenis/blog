@@ -1,7 +1,7 @@
 @import "../../assets/scss/variables.scss";
 
 .AricleList {
-    padding: 30px 20px;
+    padding: 30px 0;
 
     // display: flex;
     // flex-wrap: wrap;
@@ -11,12 +11,7 @@
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     grid-gap: 1.5rem;
 
-    max-width: $max-page-width;
-
-    margin: 0 auto;
-
     &-Wrapper {
-        // background-color: #2c2d2c;
         background: linear-gradient(0deg, #2c2d2c, rgb(8, 8, 13));
     }
 }

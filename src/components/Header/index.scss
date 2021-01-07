@@ -9,14 +9,9 @@
 
     z-index: 1;
 
-    padding: 0 16px;
-
     font-weight: 400;
 
     height: $header-height;
-
-    max-width: $max-page-width;
-    margin: 0 auto;
 
     &-Wrapper {
         background: #111;
@@ -87,6 +82,7 @@
 
     &-Burger {
         margin-right: 10px;
+        margin-left: -4px;
 
         top: 2px;
         position: relative;

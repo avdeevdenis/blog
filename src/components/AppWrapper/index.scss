@@ -1,0 +1,9 @@
+@import "../../assets/scss/variables.scss";
+
+.App-Wrapper {
+    max-width: $max-page-width;
+
+    margin: 0 auto;
+
+    padding: 0 16px;
+}

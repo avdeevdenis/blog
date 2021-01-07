@@ -6,6 +6,7 @@ import './index.scss';
 import { articlesData } from '../../data/articles';
 
 import { cn } from '@bem-react/classname';
+import { AppWrapper } from '..';
 
 const cnArticle = cn('Article');
 const cnArticleTitle = cnArticle('Title');
@@ -48,7 +49,7 @@ export const Article: React.FC<IArticleProps> = ({
                     Read More
                 </a>
                 </Link>
-                <div className={cnArticleCreatedAt}>{createdAt}</div>
+                {cnArticleCreatedAt && <div className={cnArticleCreatedAt}>{createdAt}</div>}
             </div>
             {/* </div> */}
             {/* <div className='Article-Backdrop'></div> */}
@@ -59,11 +60,13 @@ export const Article: React.FC<IArticleProps> = ({
 const Articles: React.FC = React.memo(() => {
     return (
         <div className='AricleList-Wrapper'>
-            <div className='AricleList'>
-                {articlesData.map((articleData) => {
-                    return <Article key={articleData.title} {...articleData} />
-                })}
-            </div>
+            <AppWrapper>
+                <div className='AricleList'>
+                    {articlesData.map((articleData) => {
+                        return <Article key={articleData.title} {...articleData} />
+                    })}
+                </div>
+            </AppWrapper>
         </div>
     );
 });
