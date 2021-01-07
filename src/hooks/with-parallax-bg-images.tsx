@@ -8,6 +8,20 @@ let timer: NodeJS.Timer | null = null;
 export const withParallaxBgImages = (Component: React.FC) => (props: any) => {
     const [backgroundValue, setBackground] = useState(1);
 
+    // Preload background images
+    useEffect(() => {
+        const images = [
+            require('../assets/images/castle-bg-2.jpg'),
+            require('../assets/images/castle-bg-3.jpg'),
+        ];
+
+        images.forEach(src => {
+            const image = new Image();
+            image.src = src;
+        })
+    }, []);
+
+    // Timeouted changing background images
     useEffect(() => {
         timer = setInterval(() => {
             const nextBackgroundValue = backgroundValue < backgroundItemsCount ? 
