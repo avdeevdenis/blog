@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import PageTemplate from '../../components/PageTemplate';
 
@@ -7,6 +7,8 @@ import styles from './index.module.scss';
 const cls = (className: string) => '.' + className;
 
 const Page: React.FC = React.memo(() => {
+    const [hidden, setHidden] = useState(false);
+
     if (typeof (window) !== 'undefined') {
         import('./eye-script.js' as string).then(result => {
             const initialize = result && result.default;
@@ -14,18 +16,27 @@ const Page: React.FC = React.memo(() => {
             if (initialize) {
                 initialize({
                     containerClass: cls(styles.Eye),
-                    emptyClass: cls(styles['Eye-Empty']),
                     canvasClass: cls(styles['Eye-Canvas'])
                 });
             }
+
+            window.addEventListener('orientationchange', () => {
+                setHidden(true);
+
+                /**
+                 * Костыль, чтобы не перерисовывать canvas - обновляем страницу
+                 */
+                setTimeout(() => {
+                    location.reload();
+                });
+            });
         });
     }
 
     return (
         <PageTemplate>
             <div className={styles.Eye}>
-                <div className={styles['Eye-Empty']} />
-                <canvas className={styles['Eye-Canvas']}></canvas>
+                <canvas className={styles['Eye-Canvas']} hidden={hidden}></canvas>
             </div>
         </PageTemplate>
     );

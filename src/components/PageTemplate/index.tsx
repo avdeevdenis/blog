@@ -12,7 +12,7 @@ import { withCalculateScreenSize } from '../../hooks/with-calculate-screen-size'
 import { withSmoothScroll } from '../../hooks/with-smooth-scroll';
 import { YandexMetrikaScript } from '../../helpers/yandex-metrika';
 
-const FAVICON_DEFAULT = './favicon.ico';
+const FAVICON_DEFAULT = './favicon_cat.ico';
 
 const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
     const { faviconPath } = props;

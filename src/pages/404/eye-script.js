@@ -23,28 +23,28 @@
  */
 var HEADER_HEIGHT = 80;
 
-var DISPLAY_WIDTH = window.innerWidth * 2,
-  DISPLAY_HEIGHT = (window.innerHeight - HEADER_HEIGHT) * 2,
-  DISPLAY_DURATION = 10,
-  OVERLAY_DURATION = 3;
+var DISPLAY_WIDTH,
+  DISPLAY_HEIGHT,
+  DISPLAY_DURATION = 10;
 
-var mouse = { x: DISPLAY_WIDTH / 2, y: DISPLAY_HEIGHT / 2 },
+var mouse = { x: null, y: null },
   container,
-  overlay,
-  overlayOpacity = 1,
   canvas,
   context,
   startTime,
   eyes;
 
-function initialize({ emptyClass, canvasClass, containerClass }) {
+function initialize({ canvasClass, containerClass }) {
+  DISPLAY_WIDTH = window.innerWidth * 2;
+  DISPLAY_HEIGHT = (window.innerHeight - HEADER_HEIGHT) * 2;
+  mouse = { x: DISPLAY_WIDTH / 2, y: DISPLAY_HEIGHT / 2 };
+
   container = document.querySelector(containerClass);
-  overlay = document.querySelector(emptyClass);
   canvas = document.querySelector(canvasClass);
 
   if (canvas) {
-    canvas.style.width = DISPLAY_WIDTH + 'px';
-    canvas.style.height = DISPLAY_HEIGHT + 'px';
+    canvas.style.width = (DISPLAY_WIDTH / 2) + 'px';
+    canvas.style.height = (DISPLAY_HEIGHT / 2) + 'px';
     canvas.width = DISPLAY_WIDTH;
     canvas.height = DISPLAY_HEIGHT;
 
@@ -82,9 +82,6 @@ function initialize({ emptyClass, canvasClass, containerClass }) {
 
     animate();
   }
-  else if (overlay) {
-    overlay.parentElement.removeChild(overlay);
-  }
 }
 
 function animate() {
@@ -103,24 +100,6 @@ function animate() {
     };
 
     eye.update(mouse);
-  }
-
-  // Remove the overlay if its time has passed
-  if (seconds > OVERLAY_DURATION && overlay !== undefined) {
-
-    // Ease-in
-    overlayOpacity *= 0.94 + (0.055 * overlayOpacity);
-    overlayOpacity = Math.max(overlayOpacity - 0.01, 0);
-
-    overlay.style.opacity = overlayOpacity;
-
-    if (overlayOpacity === 0) {
-      // We have no more use for the overlay, removing it ensures
-      // that we do not repeatedly enter this if statement
-      container.removeChild(overlay);
-
-      overlay = undefined;
-    }
   }
 
   requestAnimFrame(animate);

@@ -2,17 +2,12 @@
 
 .Eye {
   background-color: $site-background-color;
+  position: absolute;
   height: 100%;
   width: 100%;
-  position: absolute;
 
   &-Canvas {
-    transform: scale(0.5) translate(-50%, -50%);
-    position: absolute;
-  }
-
-  &-Empty {
-    // simple style for availability current css class
-    opacity: 1;
+    // Here is just a style for adding css class
+    pointer-events: none;
   }
 }
