@@ -1,7 +1,11 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
-  "private": true,
+  "name": "blog",
+  "version": "1.0.0",
+  "author": {
+    "name": "Avdeev Denis",
+    "email": "inbox@avdeevdenis.ru",
+    "url": "https://avdeevdenis.com"
+  },
   "scripts": {
     "next": "next",
     "dev": "next dev",
