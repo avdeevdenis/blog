@@ -15,6 +15,7 @@ import { Header, Footer } from '..';
 import './index.scss'
 import { withCalculateScreenSize } from '../../hooks/with-calculate-screen-size';
 import { withSmoothScroll } from '../../hooks/with-smooth-scroll';
+import { YandexMetrikaScript } from '../../helpers/yandex-metrika';
 
 const FAVICON_DEFAULT = './favicon.ico';
 
@@ -30,6 +31,7 @@ const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+                {YandexMetrikaScript()}
             </Head>
 
             <Header />
