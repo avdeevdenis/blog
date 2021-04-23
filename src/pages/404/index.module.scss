@@ -1,0 +1,18 @@
+@import "../../assets/scss/variables.scss";
+
+.Eye {
+  background-color: $site-background-color;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  &-Canvas {
+    transform: scale(0.5) translate(-50%, -50%);
+    position: absolute;
+  }
+
+  &-Empty {
+    // simple style for availability current css class
+    opacity: 1;
+  }
+}

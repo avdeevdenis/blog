@@ -1,6 +1,6 @@
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 
-.AricleList {
+.ArticleList {
     padding: 30px 0;
 
     // display: flex;
@@ -52,7 +52,7 @@
         color: #fff;
         font-size: 22px;
         line-height: 30px;
-        font-weight: 600;
+        font-weight: 500;
 
         margin-bottom: 20px;
         word-break: break-word;
@@ -122,7 +122,7 @@
         &:after {
             transition: 0.2s transform ease-in-out;
 
-            content: "\2192";
+            content: '\2192';
             position: relative;
 
             top: 1px;
@@ -144,7 +144,7 @@
         width: 24px;
         height: 24px;
 
-        background-image: url("//nextjs-blog.avdeevdenis.vercel.app/favicon.ico");
+        background-image: url('//nextjs-blog.avdeevdenis.vercel.app/favicon.ico');
         background-size: cover;
         background-position: center center;
     }
@@ -160,19 +160,19 @@
 }
 
 @media screen and (max-width: $breakpoint-large) {
-    .AricleList {
+    .ArticleList {
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
 }
 
 @media screen and (max-width: $breakpoint-medium) {
-    .AricleList {
+    .ArticleList {
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
 }
 
 @media screen and (max-width: $breakpoint-small) {
-    .AricleList {
+    .ArticleList {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 

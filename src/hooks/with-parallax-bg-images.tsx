@@ -1,42 +1,67 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const backgroundItemsCount = 3;
+import styles from './with-parallax-bg-images.module.scss';
+
+/**
+ * Общее количество изображений, учавствующих в parallax
+ */
+const ITEMS_COUNT = 3;
+
+/**
+ * Время, через которое одна картинка сменяется другой 
+ */
 const BG_TOGGLE_TIMEOUT = 6000;
 
-let timer: NodeJS.Timer | null = null;
+/**
+ * Изображения, учавствующие в parallax
+ */
+const ASSET_PATHS = [
+    require('../assets/images/castle-bg-2.jpg'),
+    require('../assets/images/castle-bg-3.jpg'),
+];
 
-import './with-parallax-bg-images.scss';
+let changeTimer: NodeJS.Timer | null = null;
 
 export const withParallaxBgImages = (Component: React.FC) => (props: any) => {
     const [backgroundValue, setBackground] = useState(1);
 
-    // Preload background images
-    useEffect(() => {
-        const images = [
-            require('../assets/images/castle-bg-2.jpg'),
-            require('../assets/images/castle-bg-3.jpg'),
-        ];
+    /**
+     * To make preload images once time per session
+     */
+    const isAlreadyLoaded = () => {
+        const selector = '.' + styles.ImagePreloaderHidden;
 
-        images.forEach(src => {
+        return Boolean(document.querySelectorAll(selector).length);
+    }
+
+    /**
+     * Preload background images
+     */
+    useEffect(() => {
+        if (isAlreadyLoaded()) return;
+
+        ASSET_PATHS.forEach(src => {
             const imageElement = document.createElement('img');
             imageElement.src = src;
-            imageElement.classList.add('ImagePreloaderHidden');
+            imageElement.classList.add(styles.ImagePreloaderHidden);
 
             document.body.append(imageElement);
         });
     }, []);
 
-    // Timeouted changing background images
+    /**
+     * Timeouted changing background images
+     */
     useEffect(() => {
-        timer = setInterval(() => {
-            const nextBackgroundValue = backgroundValue < backgroundItemsCount ? 
+        changeTimer = setInterval(() => {
+            const nextBackgroundValue = backgroundValue < ITEMS_COUNT ? 
                 backgroundValue + 1 : 1;
 
             setBackground(nextBackgroundValue);
         }, BG_TOGGLE_TIMEOUT);
 
         return () => {
-            clearInterval(timer as NodeJS.Timer);
+            clearInterval(changeTimer as NodeJS.Timer);
         };
     }, [backgroundValue]);
 

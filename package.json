@@ -14,6 +14,10 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "highlight.js": "^10.5.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "is-mobile": "^2.2.2",
     "next": "^10.0.0",
     "next-compose-plugins": "^2.2.1",
@@ -21,7 +25,9 @@
     "node-sass": "^5.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "svg-sprite-loader": "^6.0.6",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@material-ui/core": "^4.11.2",

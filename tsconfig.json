@@ -27,7 +27,7 @@
     "src/d.ts.modules/next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/pages/404.js"  ],
   "exclude": [
     "node_modules"
   ]

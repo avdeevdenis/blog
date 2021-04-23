@@ -3,11 +3,9 @@ import React, { useCallback, useState } from 'react';
 import { copyText } from '../../helpers/copy-text';
 
 const cnCode = cn('Code');
-const cnCodeCopy = cnCode('Copy');
-const cnCodeCopyCopied = cnCode('Copy', { copied: true });
 const cnCodeContent = cnCode('Content');
 
-import './index.scss';
+import styles from './index.module.scss';
 
 let timer: NodeJS.Timer | null = null;
 
@@ -29,10 +27,10 @@ const Code: React.FC<{ code: string }> = ({ code }) => {
     }, []);
 
     return (
-        <div className={cnCode()} onClick={e => onCodeClick(e)}>
-            <div className={copied ? cnCodeCopyCopied : cnCodeCopy} />
+        <div className={styles.Code} onClick={e => onCodeClick(e)}>
+            <div className={copied ? styles['Code-Copy_copied'] : styles['Code-Copy']} />
             <div className={cnCodeContent}>
-                <pre><code className="javascript">{code}</code></pre>
+                <pre><code className='javascript'>{code}</code></pre>
             </div>
         </div>
     );

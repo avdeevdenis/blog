@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export const moduleLoader = (module: Promise<any>) => {
     const [loaded, setLoaded] = useState(false);

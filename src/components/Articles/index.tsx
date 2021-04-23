@@ -1,21 +1,11 @@
 import React, { CSSProperties } from 'react';
 import Link from 'next/link';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 import { articlesData } from '../../data/articles';
 
-import { cn } from '@bem-react/classname';
 import { AppWrapper } from '..';
-
-const cnArticle = cn('Article');
-const cnArticleTitle = cnArticle('Title');
-const cnArticleDescription = cnArticle('Description');
-const cnArticleBottom = cnArticle('Bottom');
-const cnArticleReadButton = cnArticle('ReadButton');
-const cnArticleCreatedAt = cnArticle('CreatedAt');
-const cnArticleFavicon = cnArticle('Favicon');
-// const cnArticleContent = cnArticle('Content');
 export interface IArticleProps {
     // Заголовок статьи
     title: string;
@@ -36,32 +26,29 @@ export const Article: React.FC<IArticleProps> = ({
     const faviconStyle: CSSProperties | undefined = faviconLink ? { backgroundImage: `url(${faviconLink})` } : undefined;
 
     return (
-        <div className={cnArticle()}>
-            {/* <div className={cnArticleContent}> */}
-            <div className={cnArticleTitle}>
+        <div className={styles.Article}>
+            <div className={styles['Article-Title']}>
                 <b>{titleWrapped.slice(0, 1)}</b>{titleWrapped.slice(1)}
             </div>
-            <div className={cnArticleDescription}>{description}</div>
-            <div className={cnArticleBottom}>
+            <div className={styles['Article-Description']}>{description}</div>
+            <div className={styles['Article-Bottom']}>
                 <Link href={link}>
-                    <a href={link} title='Открыть в новой вкладке' className={cnArticleReadButton}>
-                        <div style={faviconStyle} className={cnArticleFavicon} />
+                    <a href={link} title='Открыть в новой вкладке' className={styles['Article-ReadButton']}>
+                        <div style={faviconStyle} className={styles['Article-Favicon']} />
                     Read More
                 </a>
                 </Link>
-                {cnArticleCreatedAt && <div className={cnArticleCreatedAt}>{createdAt}</div>}
+                {createdAt && <div className={styles['Article-CreatedAt']}>{createdAt}</div>}
             </div>
-            {/* </div> */}
-            {/* <div className='Article-Backdrop'></div> */}
         </div>
     )
 }
 
 const Articles: React.FC = React.memo(() => {
     return (
-        <div className='AricleList-Wrapper'>
+        <div className={styles['ArticleList-Wrapper']}>
             <AppWrapper>
-                <div className='AricleList'>
+                <div className={styles.ArticleList}>
                     {articlesData.map((articleData) => {
                         return <Article key={articleData.title} {...articleData} />
                     })}

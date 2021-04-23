@@ -1,12 +1,8 @@
-import { cn } from '@bem-react/classname';
 import React, { useEffect } from 'react';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-export const cnIframePager = cn('IframePager');
-export const cnIframePagerLoader = cnIframePager('Loader');
-
-import './index.scss';
+import styles from './index.module.scss';
 
 export interface IIframeProps {
     src: string;
@@ -45,16 +41,21 @@ const IframePager: React.FC<IIframeProps> = React.memo(({ src }) => {
     const setError = () => setIframeSrc('/error');
     const onError = () => setError();
 
+    const className = [
+        styles.IframePager,
+        !loaded && styles['IframePager-Hidden']
+    ].filter(Boolean).join(' ');
+
     return (
         <>
-            {!loaded && <CircularProgress className={cnIframePagerLoader} size={40} />}
+            {!loaded && <CircularProgress className={styles['IframePager-Loader']} size={40} />}
             <iframe
                 onLoad={onLoad}
                 onError={onError}
-                className={cnIframePager({ hidden: !loaded })}
-                sandbox="allow-scripts allow-same-origin allow-popups"
+                className={className}
+                sandbox='allow-scripts allow-same-origin allow-popups'
                 src={iframeSrc}
-                loading="lazy"
+                loading='lazy'
             ></iframe>
         </>
     );

@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 
 .Header {
     display: flex;
@@ -14,7 +14,7 @@
     height: $header-height;
 
     &-Wrapper {
-        background: #111;
+        background-color: $site-background-color;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
@@ -54,7 +54,7 @@
         padding-bottom: 2px;
 
         &::before {
-            content: "";
+            content: '';
             position: absolute;
 
             left: 0;

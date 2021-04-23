@@ -1,9 +1,18 @@
 import React from 'react';
-import './index.scss';
+import styles from './index.module.scss';
 
-const AppWrapper: React.FC = props => {
+export interface IAppWrapperProps {
+    fullSize?: boolean;
+}
+
+const AppWrapper: React.FC<IAppWrapperProps> = props => {
+    const className = [
+        styles['App-Wrapper'],
+        props.fullSize && styles['App-Wrapper_fullSize']
+    ].filter(Boolean).join(' ');
+
     return (
-        <div className='App-Wrapper'>
+        <div className={className}>
             {props.children}
         </div>
     )

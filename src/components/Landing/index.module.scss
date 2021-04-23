@@ -1,0 +1,46 @@
+@import '../../assets/scss/variables.scss';
+
+.Landing {
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+    &::before {
+        background-size: cover;
+        background-position: center center;
+
+        transition: 2s background-image ease-in;
+
+        filter: brightness(.85);
+    }
+
+    &_background_1::before {
+        background-image: url('../../assets/images/castle-bg.jpg');
+    }
+
+    &_background_2::before {
+        background-image: url('../../assets/images/castle-bg-2.jpg');
+    }
+
+    &_background_3::before {
+        background-image: url('../../assets/images/castle-bg-3.jpg');
+    }
+
+    &::after {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    height: calc(100vh);
+    height: calc(var(--vh, 1vh) * 100);
+
+    position: relative;
+
+    margin-top: -#{$header-height};
+}

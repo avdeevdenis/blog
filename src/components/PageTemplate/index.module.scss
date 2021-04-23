@@ -1,0 +1,8 @@
+@import '../../assets/scss/variables.scss';
+
+.App-Page {
+    min-height: calc(var(--vh, 1vh) * 100 - #{$header-height} - #{$footer-height});
+
+    position: relative;
+    background-color: #eee;
+}

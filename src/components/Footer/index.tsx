@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { AppWrapper } from '..';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 let timeout: NodeJS.Timeout | null = null;
 
@@ -16,11 +16,16 @@ const Footer = React.memo(() => {
         }, 1000);
     }, [animated]);
 
+    const className = [
+        styles['Footer-Copy'],
+        animated && styles['Footer-Copy_animated']
+    ].filter(Boolean).join(' ');
+
     return (
-        <div className='Footer-Wrapper'>
+        <div className={styles['Footer-Wrapper']}>
             <AppWrapper>
-                <div className='Footer'>
-                    <div className={'Footer-Copy' + (animated ? ' Footer-Copy_animated' : '')} onClick={onFooterCopyClick}>Avdeev Denis 2020 &copy;</div>
+                <div className={styles.Footer}>
+                    <div className={className} onClick={onFooterCopyClick}>Avdeev Denis 2020 &copy;</div>
                 </div>
             </AppWrapper>
         </div >

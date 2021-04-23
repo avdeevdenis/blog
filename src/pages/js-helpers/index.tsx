@@ -7,10 +7,10 @@ import { withHightlightCode } from '../../hooks/with-highlight-code';
 
 const code1 =
     `[...document.getElementsByTagName('*')].forEach(elem => {
-    elem.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)
+    elem.style.outline='1px solid #'+(~~(Math.random()*(1<<24))).toString(16)
 })`;
 
-const code2 = `"#"+((1<<24)*Math.random()|0).toString(16)`;
+const code2 = `'#'+((1<<24)*Math.random()|0).toString(16)`;
 const code3 = `Math.random().toString(16).substr(-6)`;
 
 const PageBase: React.FC = React.memo(() => {
