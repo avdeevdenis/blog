@@ -12,7 +12,7 @@ import { withCalculateScreenSize } from '../../hooks/with-calculate-screen-size'
 import { withSmoothScroll } from '../../hooks/with-smooth-scroll';
 import { YandexMetrikaScript } from '../../helpers/yandex-metrika';
 
-const FAVICON_DEFAULT = './favicon_cat.ico';
+const FAVICON_DEFAULT = './favicon_y_cyka.png';
 
 const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
     const { faviconPath } = props;
@@ -22,7 +22,7 @@ const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
         <div className={styles.App}>
             <Head>
                 <title>Home &#10026; Avdeev Denis</title>
-                <link rel='shortcut icon' href={favicon} />
+                <link rel='shortcut icon' href={favicon} type='image/png'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0' />
                 <link rel='preconnect' href='https://fonts.gstatic.com' />
                 <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap' rel='stylesheet' />
