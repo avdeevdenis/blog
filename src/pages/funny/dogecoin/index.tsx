@@ -83,11 +83,11 @@ const Page: React.FC = React.memo(() => {
         const centerY = document.body.offsetHeight / 2 - dogecoinSize / 2 - HEADER_HEIGHT;
 
         element.style.transform = `translate(${centerX}px,${centerY}px) scale(0.05) rotate(${rotateValue / 2}deg)`;
-        element.style.opacity = '1';
 
         setTimeout(() => {
             element.style.transition = 'transform .5s linear';
             element.style.transform = `translate(${centerX}px,${centerY}px) scale(1) rotate(${rotateValue}deg)`;
+            element.style.opacity = '1';
 
             dogeCoords.xStart = getFloat(centerX);
             dogeCoords.xEnd = dogeCoords.xStart + dogecoinSize;
