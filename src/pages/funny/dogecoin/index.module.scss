@@ -1,0 +1,32 @@
+.Dogecoin {
+  background-color: #222;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  &-canvas {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &-icon {
+    background-image: url('./dogecoin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 64px;
+    height: 64px;
+
+    position: absolute;
+    opacity: 0;
+    user-select: none;
+
+    cursor: pointer;
+
+    will-change: transform;
+
+    z-index: 1;
+  }
+}
