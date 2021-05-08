@@ -5,7 +5,7 @@ import { IframePager } from '../../components';
 
 const Page: React.FC = React.memo(() => {
     return (
-        <PageTemplate faviconPath={'//avdeevdenis.github.io/frontend-drug-parser/favicon.ico'}>
+        <PageTemplate title={'Frontend Drug Parser'} faviconPath={'//avdeevdenis.github.io/frontend-drug-parser/favicon.ico'}>
             <IframePager src={'//avdeevdenis.github.io/frontend-drug-parser/'} />
         </PageTemplate>
     );

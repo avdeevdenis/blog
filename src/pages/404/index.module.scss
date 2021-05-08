@@ -10,4 +10,32 @@
     // Here is just a style for adding css class
     pointer-events: none;
   }
+
+  &-Text {
+    position: absolute;
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 10px 15px;
+    transform: translate(-50%);
+    left: 50%;
+    top: 10px;
+    font-weight: bold;
+    transition: 1s opacity linear;
+
+    &_visible {
+      opacity: 1;
+    }
+  }
+}
+
+[data-platform='ua-desktop'] .Eye-Text {
+  font-size: 46px;
+}
+
+[data-platform='ua-mobile'] .Eye-Text {
+  font-size: 23px;
+  min-width: 220px;
 }

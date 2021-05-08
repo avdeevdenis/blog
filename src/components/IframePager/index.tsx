@@ -43,7 +43,7 @@ const IframePager: React.FC<IIframeProps> = React.memo(({ src }) => {
 
     const className = [
         styles.IframePager,
-        !loaded && styles['IframePager-Hidden']
+        !loaded && styles['IframePager_hidden']
     ].filter(Boolean).join(' ');
 
     return (

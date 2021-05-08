@@ -84,6 +84,8 @@
         margin-right: 10px;
         margin-left: -4px;
 
+        display: none;
+
         top: 2px;
         position: relative;
     }
@@ -179,5 +181,9 @@
     .Header-Logo {
         font-size: 22px;
         font-weight: bold;
+    }
+
+    .Header-Burger {
+        display: block;
     }
 }

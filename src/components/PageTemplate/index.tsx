@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
     IPageTemplateProps,
@@ -11,17 +11,26 @@ import styles from './index.module.scss'
 import { withCalculateScreenSize } from '../../hooks/with-calculate-screen-size';
 import { withSmoothScroll } from '../../hooks/with-smooth-scroll';
 import { YandexMetrikaScript } from '../../helpers/yandex-metrika';
+import isMobile from '../../helpers/is-mobile';
 
 const FAVICON_DEFAULT = './favicon_y_cyka.png';
 
 const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
-    const { faviconPath } = props;
+    const { faviconPath, title } = props;
     const favicon = faviconPath || FAVICON_DEFAULT;
+
+    const titleText = title || 'Home ✪ Avdeev Denis';
+
+    useEffect(() => {
+        const platform = isMobile ? 'ua-mobile' : 'ua-desktop';
+
+        document.documentElement.dataset.platform = platform;
+    }, []);
 
     return (
         <div className={styles.App}>
             <Head>
-                <title>Home &#10026; Avdeev Denis</title>
+                <title>{titleText}</title>
                 <link rel='shortcut icon' href={favicon} type='image/png'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0' />
                 <link rel='preconnect' href='https://fonts.gstatic.com' />

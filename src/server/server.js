@@ -20,14 +20,14 @@ app.prepare().then(() => {
   async function pingRouter(req, res) {
     console.log('pingRouter fn');
 
-    if (!AvdeevBot) {
-      console.log('no bot');
-      const TelegramBot = require('node-telegram-bot-api');
-      const token = process.env.TELEGRAM_API_TOKEN;
-      AvdeevBot = new TelegramBot(token, {
-        polling: true
-      });
-    }
+    // if (!AvdeevBot) {
+    //   console.log('no bot');
+    //   const TelegramBot = require('node-telegram-bot-api');
+    //   const token = process.env.TELEGRAM_API_TOKEN;
+    //   AvdeevBot = new TelegramBot(token, {
+    //     polling: true
+    //   });
+    // }
 
     // const ua = parserUA(req.headers['user-agent']);
 

@@ -6,10 +6,29 @@ import styles from './index.module.scss';
 
 const cls = (className: string) => '.' + className;
 
+const NotFoundText: React.FC<{ isVisible404Text: boolean }> = React.memo(({ isVisible404Text }) => {
+    const className = [
+        styles['Eye-Text'],
+        isVisible404Text && styles['Eye-Text_visible']
+    ].filter(Boolean).join(' ');
+
+    return (
+        <div className={className}>404 - Not Found</div>
+    );
+});
+
+const Canvas404: React.FC<{ hidden: boolean }> = React.memo(({ hidden }) => {
+    return (
+        <canvas className={styles['Eye-Canvas']} hidden={hidden}></canvas>
+    );
+})
+
 const Page: React.FC = React.memo(() => {
     const [hidden, setHidden] = useState(false);
+    const [isVisible404Text, setVisible404Text] = useState(false);
+    const [inited, setInited] = useState(false);
 
-    if (typeof (window) !== 'undefined') {
+    if (typeof (window) !== 'undefined' && !inited) {
         import('./eye-script.js' as string).then(result => {
             const initialize = result && result.default;
 
@@ -18,7 +37,13 @@ const Page: React.FC = React.memo(() => {
                     containerClass: cls(styles.Eye),
                     canvasClass: cls(styles['Eye-Canvas'])
                 });
+
+                setInited(true);
             }
+
+            setTimeout(() => {
+                setVisible404Text(true);
+            }, 3000);
 
             window.addEventListener('orientationchange', () => {
                 setHidden(true);
@@ -34,9 +59,10 @@ const Page: React.FC = React.memo(() => {
     }
 
     return (
-        <PageTemplate>
+        <PageTemplate title='404 - Not Found'>
             <div className={styles.Eye}>
-                <canvas className={styles['Eye-Canvas']} hidden={hidden}></canvas>
+                <Canvas404 hidden={hidden}/>
+                <NotFoundText isVisible404Text={isVisible404Text} />
             </div>
         </PageTemplate>
     );
