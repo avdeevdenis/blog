@@ -7,6 +7,13 @@ const createFaviconLink = (siteUrl: string) => {
 const STATIC_PAGES = '/pages/';
 
 export const articlesData: IArticleProps[] = [{
+    title: 'Telegram Bot',
+    description: 'Бот для телеграма со списком различных команд.',
+    target: '_blank',
+    buttonText: 'Open',
+    createdAt: '23 Mar 2021',
+    link: 'https://t.me/AvdeevDenis_bot',
+},{
     title: 'JS helpers',
     description: 'Вспомогательные приемы в JS.',
     link: STATIC_PAGES + 'js-helpers'

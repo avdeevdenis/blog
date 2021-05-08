@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import styles from './index.module.scss';
+import { getClassName } from '../../helpers/get-classname';
 
 export interface IIframeProps {
     src: string;
@@ -41,10 +42,10 @@ const IframePager: React.FC<IIframeProps> = React.memo(({ src }) => {
     const setError = () => setIframeSrc('/error');
     const onError = () => setError();
 
-    const className = [
+    const className = getClassName([
         styles.IframePager,
         !loaded && styles['IframePager_hidden']
-    ].filter(Boolean).join(' ');
+    ]);
 
     return (
         <>

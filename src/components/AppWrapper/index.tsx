@@ -1,4 +1,5 @@
 import React from 'react';
+import { getClassName } from '../../helpers/get-classname';
 import styles from './index.module.scss';
 
 export interface IAppWrapperProps {
@@ -6,10 +7,10 @@ export interface IAppWrapperProps {
 }
 
 const AppWrapper: React.FC<IAppWrapperProps> = props => {
-    const className = [
+    const className = getClassName([
         styles['App-Wrapper'],
         props.fullSize && styles['App-Wrapper_fullSize']
-    ].filter(Boolean).join(' ');
+    ]);
 
     return (
         <div className={className}>

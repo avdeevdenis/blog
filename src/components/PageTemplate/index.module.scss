@@ -1,9 +1,5 @@
 @import '../../assets/scss/variables.scss';
 
-.App {
-    font-family: 'Montserrat', sans-serif;
-}
-
 .App-Page {
     min-height: calc(var(--vh, 1vh) * 100 - #{$header-height} - #{$footer-height});
 

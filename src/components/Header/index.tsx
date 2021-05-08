@@ -16,7 +16,9 @@ const Header: React.FC = React.memo(() => {
                             <a href='#'><BurgerIcon white /></a>
                         </li>
                         <li className={styles['Header-MenuItem']}>
-                            <a className={styles['Header-MenuLink']} href='#'>About</a>
+                            <Link href='/about'>
+                                <a className={styles['Header-MenuLink']}>About</a>
+                            </Link>
                         </li>
                         <li className={styles['Header-MenuItem']}>
                             <Link href='/projects'>
@@ -24,10 +26,14 @@ const Header: React.FC = React.memo(() => {
                             </Link>
                         </li>
                         <li className={styles['Header-MenuItem']}>
-                            <a className={styles['Header-MenuLink']} href='#'>Contacts</a>
+                            <Link href='/contacts'>
+                                <a className={styles['Header-MenuLink']}>Contacts</a>
+                            </Link>
                         </li>
                         <li className={styles['Header-MenuItem']}>
-                            <a className={styles['Header-MenuLink']} href='#'>Jobs</a>
+                            <Link href='/jobs'>
+                                <a className={styles['Header-MenuLink']}>Jobs</a>
+                            </Link>
                         </li>
                     </ul>
                     <div className={styles['Header-Logo']}><Link href='/'>Home</Link></div>

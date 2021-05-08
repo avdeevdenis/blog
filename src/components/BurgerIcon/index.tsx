@@ -1,4 +1,5 @@
 import React from 'react';
+import { getClassName } from '../../helpers/get-classname';
 
 import styles from './index.module.scss';
 
@@ -14,10 +15,10 @@ const BurgerIcon: React.FC<IBurgerIconProps> = React.memo(props => {
         toggle(!isActive);
     }, [isActive]);
 
-    const className = [
+    const className = getClassName([
         styles.BurgerIcon,
         isActive && styles.BurgerIcon_active,
-    ].filter(Boolean).join(' ');
+    ]);
 
     if (white) {
         return (

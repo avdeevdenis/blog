@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { AppWrapper } from '..';
+import { getClassName } from '../../helpers/get-classname';
 
 import styles from './index.module.scss';
 
@@ -16,10 +17,10 @@ const Footer = React.memo(() => {
         }, 1000);
     }, [animated]);
 
-    const className = [
+    const className = getClassName([
         styles['Footer-Copy'],
         animated && styles['Footer-Copy_animated']
-    ].filter(Boolean).join(' ');
+    ]);
 
     return (
         <div className={styles['Footer-Wrapper']}>

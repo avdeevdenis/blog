@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 
 import PageTemplate from '../../components/PageTemplate';
+import { getClassName } from '../../helpers/get-classname';
 
 import styles from './index.module.scss';
 
 const cls = (className: string) => '.' + className;
 
 const NotFoundText: React.FC<{ isVisible404Text: boolean }> = React.memo(({ isVisible404Text }) => {
-    const className = [
+    const className = getClassName([
         styles['Eye-Text'],
         isVisible404Text && styles['Eye-Text_visible']
-    ].filter(Boolean).join(' ');
+    ]);
 
     return (
         <div className={className}>404 - Not Found</div>
