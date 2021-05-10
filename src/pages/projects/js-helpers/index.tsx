@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { AppWrapper, Code } from '../../components';
+import { AppWrapper, Code } from '../../../components';
 
-import PageTemplate from '../../components/PageTemplate';
-import { withHightlightCode } from '../../hooks/with-highlight-code';
+import PageTemplate from '../../../components/PageTemplate';
+import { withHightlightCode } from '../../../hooks/with-highlight-code';
 
 const code1 =
     `[...document.getElementsByTagName('*')].forEach(elem => {

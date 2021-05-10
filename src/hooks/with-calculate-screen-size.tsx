@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-import isMobile from '../helpers/is-mobile';
+import isMobile from '../helpers/is_mobile';
 
 export const withCalculateScreenSize = (Component: React.FC) => (props: object) => {
     const setCorrectVh = (wasOrientationChanged: boolean = false) => {

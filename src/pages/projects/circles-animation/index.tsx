@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PageTemplate from '../../../src/components/PageTemplate';
-import { IframePager } from '../../components';
+import PageTemplate from '../../../components/PageTemplate';
+import { IframePager } from '../../../components';
 
 const Page: React.FC = React.memo(() => {
     return (

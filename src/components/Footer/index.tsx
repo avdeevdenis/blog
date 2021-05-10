@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { AppWrapper } from '..';
-import { getClassName } from '../../helpers/get-classname';
+import { getClassName } from '../../helpers/get_classname';
 
 import styles from './index.module.scss';
 

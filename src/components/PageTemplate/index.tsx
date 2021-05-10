@@ -7,11 +7,10 @@ import {
 
 import { Header } from '..';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 import { withCalculateScreenSize } from '../../hooks/with-calculate-screen-size';
-import { withSmoothScroll } from '../../hooks/with-smooth-scroll';
-import { YandexMetrikaScript } from '../../helpers/yandex-metrika';
-import isMobile from '../../helpers/is-mobile';
+import { YandexMetrikaScript } from '../../helpers/ya_metrika';
+import isMobile from '../../helpers/is_mobile';
 
 const FAVICON_DEFAULT = './favicon_y_cyka.png';
 
@@ -47,6 +46,6 @@ const PageTemplateBase: React.FC<IPageTemplateProps> = React.memo(props => {
     )
 });
 
-const PageTemplate = withSmoothScroll(withCalculateScreenSize(PageTemplateBase));
+const PageTemplate: React.FC<IPageTemplateProps> = withCalculateScreenSize(PageTemplateBase);
 
 export default PageTemplate;

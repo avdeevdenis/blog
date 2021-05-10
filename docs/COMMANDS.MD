@@ -1,11 +1,10 @@
 ***Локальный запуск сервера:***
 ```
-"dev": "ts-node-dev --project tsconfig.server.json src/server/server.ts"
+"dev": "nodemon -e ts -w ./src/server -x npm run watch:server",
+"watch:server": "ts-node --project tsconfig.server.json src/server/server.ts"
 ```
 
-It restarts target node process when any of required files changes (as standard node-dev) but shares Typescript compilation process between restarts.
-
-https://github.com/wclr/ts-node-dev
+https://stackoverflow.com/a/43699117
 
 <br>
 <br>

@@ -1,6 +1,6 @@
 import { cn } from '@bem-react/classname';
 import React, { useCallback, useState } from 'react';
-import { copyText } from '../../helpers/copy-text';
+import { copyText } from '../../helpers/copy_text';
 
 const cnCode = cn('Code');
 const cnCodeContent = cnCode('Content');

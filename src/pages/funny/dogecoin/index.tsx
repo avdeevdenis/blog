@@ -5,10 +5,7 @@ import PageTemplate from '../../../../src/components/PageTemplate';
 import { Fireworks } from './fireworks_script';
 
 import styles from './index.module.scss';
-
-const getRandomInt = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+import { getRandomInt } from '../../../helpers/get_rangom_int';
 
 /**
  * Размер шапки в пикселях

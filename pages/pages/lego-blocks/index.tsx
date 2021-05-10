@@ -1,3 +1,3 @@
-import Page from '../../../src/pages/lego-blocks';
+import Page from '../../../src/pages/projects/lego-blocks';
 
 export default Page;

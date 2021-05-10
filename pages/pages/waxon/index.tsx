@@ -1,3 +1,3 @@
-import Page from '../../../src/pages/waxon';
+import Page from '../../../src/pages/projects/waxon';
 
 export default Page;

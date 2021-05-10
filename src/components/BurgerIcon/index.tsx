@@ -1,5 +1,5 @@
 import React from 'react';
-import { getClassName } from '../../helpers/get-classname';
+import { getClassName } from '../../helpers/get_classname';
 
 import styles from './index.module.scss';
 

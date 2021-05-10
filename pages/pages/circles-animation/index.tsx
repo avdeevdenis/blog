@@ -1,3 +1,3 @@
-import Page from '../../../src/pages/circles-animation';
+import Page from '../../../src/pages/projects/circles-animation';
 
 export default Page;

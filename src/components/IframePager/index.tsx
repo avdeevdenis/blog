@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import styles from './index.module.scss';
-import { getClassName } from '../../helpers/get-classname';
+import { getClassName } from '../../helpers/get_classname';
 
 export interface IIframeProps {
     src: string;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import PageTemplate from '../../components/PageTemplate';
-import { getClassName } from '../../helpers/get-classname';
+import { getClassName } from '../../helpers/get_classname';
 
 import styles from './index.module.scss';
 

@@ -3,7 +3,7 @@ import { cn } from '@bem-react/classname';
 
 import styles from './index.module.scss';
 import { withParallaxBgImages } from '../../hooks/with-parallax-bg-images';
-import { getClassName } from '../../helpers/get-classname';
+import { getClassName } from '../../helpers/get_classname';
 
 export const cnLanding = cn('Landing');
 
