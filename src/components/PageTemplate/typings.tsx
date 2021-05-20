@@ -4,4 +4,7 @@ export interface IPageTemplateProps {
 
     // Заголовок страницы
     title?: string;
+
+    // Ограничение максимальной ширины блока
+    blackBg?: boolean;
 }
