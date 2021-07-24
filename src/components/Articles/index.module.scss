@@ -13,6 +13,8 @@
 
     &-Wrapper {
         background: linear-gradient(0deg, #2c2d2c, rgb(8, 8, 13));
+
+        min-height: calc(100vh - #{$header-height});
     }
 }
 

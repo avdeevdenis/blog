@@ -10,7 +10,7 @@ export interface IArticleProps {
     // Заголовок статьи
     title: string;
     // Описание статьи
-    description: string;
+    description?: string;
     // Дата написания
     createdAt?: string;
     // Ссылка на статью

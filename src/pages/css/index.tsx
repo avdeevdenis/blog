@@ -31,6 +31,9 @@ export const CSSArticles: CSSArticleItem[] = [{
 }, {
   name: 'Floating swim text',
   link: 'css/floating-swim-text'
+}, {
+  name: 'Impossible Checkbox',
+  link: '/css/impossible-checkbox'
 }];
 
 const Page: React.FC = React.memo(() => {

@@ -7,6 +7,11 @@ const createFaviconLink = (siteUrl: string) => {
 const STATIC_PAGES = '/pages/';
 
 export const articlesData: IArticleProps[] = [{
+    title: 'CSS Articles',
+    target: '_blank',
+    description: 'Разнообразные статьи о CSS-приемах.',
+    link: '/css',
+},{
     title: 'Telegram Bot',
     description: 'Бот для телеграма со списком различных команд.',
     target: '_blank',
